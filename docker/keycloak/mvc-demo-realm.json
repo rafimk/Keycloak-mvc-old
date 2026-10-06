@@ -1,0 +1,34 @@
+{
+  "realm": "mvc-demo",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "clients": [
+    {
+      "clientId": "mvc-app",
+      "name": "MVC Application",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "mvc-local-development-secret",
+      "standardFlowEnabled": true,
+      "implicitFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": ["https://localhost:44317/signin-oidc"],
+      "webOrigins": ["https://localhost:44317"],
+      "defaultClientScopes": ["web-origins", "acr", "profile", "email"],
+      "attributes": { "pkce.code.challenge.method": "S256" }
+    }
+  ],
+  "users": [
+    {
+      "username": "demo",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "Demo",
+      "lastName": "User",
+      "email": "demo@example.com",
+      "credentials": [{ "type": "password", "value": "Demo123!", "temporary": false }]
+    }
+  ]
+}
